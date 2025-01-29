@@ -1,0 +1,25 @@
+{
+  "name": "toolbox-challenge",
+  "version": "1.0.0",
+  "description": "Fullstack challenge for Toolbox",
+  "scripts": {
+    "install:all": "npm install && cd api && npm install && cd ../frontend && npm install",
+    "start:api": "cd api && npm start",
+    "start:frontend": "cd frontend && npm start",
+    "test:api": "cd api && npm test",
+    "test:frontend": "cd frontend && npm test",
+    "dev": "concurrently \"npm run start:api\" \"npm run start:frontend\""
+  },
+  "keywords": [
+    "fullstack",
+    "challenge",
+    "react",
+    "express",
+    "node"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
