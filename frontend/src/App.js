@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Table, Form, InputGroup, Spinner } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchFiles, fetchFilesList } from "./store/filesSlice";
+import { fetchFiles } from "./store/filesSlice";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => {
@@ -32,6 +32,7 @@ const App = () => {
   }, []);
 
   const validFiles = [...new Set(allLines.map((line) => line.file))];
+
   return (
     <div>
       <header
@@ -67,13 +68,8 @@ const App = () => {
         </div>
 
         {isLoading ? (
-          <div className="text-center my-5">
-            <Spinner
-              animation="border"
-              role="status"
-              variant="primary"
-              aria-label="Cargando datos"
-            >
+          <div className="text-center my-5" data-testid="loading-spinner">
+            <Spinner animation="border" role="status" variant="primary">
               <span className="visually-hidden">Cargando...</span>
             </Spinner>
           </div>

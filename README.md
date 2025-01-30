@@ -37,6 +37,8 @@ Aplicación full-stack que consiste en una API en Node.js y un frontend en React
 │   │   └── store/         # Configuración de Redux
 │   │       ├── index.js   # Configuración del store
 │   │       └── filesSlice.js # Slice para manejo de archivos
+│   ├── test/              # Archivos de prueba del frontend
+│   │   └── App.test.js   # Pruebas del componente principal
 │   ├── public/             # Archivos públicos
 │   │   └── index.html     # Template HTML principal
 │   ├── package.json       # Dependencias y scripts del frontend
@@ -64,6 +66,7 @@ Aplicación full-stack que consiste en una API en Node.js y un frontend en React
 - `src/store/`: Implementación de Redux para manejo del estado
   - `filesSlice.js`: Define acciones y reducers para manejo de archivos
   - `index.js`: Configura el store de Redux
+- `test/App.test.js`: Tests unitarios del componente principal
 - `public/index.html`: Template HTML base
 - `webpack.config.js`: Configuración de desarrollo y producción de Webpack
 
@@ -125,8 +128,22 @@ npm run test:api
 
 ### Pruebas Frontend
 
+Para ejecutar todos los tests del frontend:
+
 ```bash
 npm run test:frontend
+```
+
+Para ejecutar específicamente los tests del componente App:
+
+```bash
+cd frontend && npm test test/App.test.js
+```
+
+Para ejecutar los tests en modo watch:
+
+```bash
+cd frontend && npm test test/App.test.js --watch
 ```
 
 ## Documentación API
@@ -179,7 +196,7 @@ Formato de respuesta:
 - React Bootstrap
 - Redux Toolkit
 - Webpack
-- Jest para pruebas
+- Jest & Testing Library para pruebas
 
 ### DevOps
 
